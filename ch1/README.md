@@ -61,7 +61,9 @@ I/O를 요청하는 함수의 호출은 작업이 완료될 때까지 스레드�
 이벤트 디멀티플렉싱은 CPU 자원을 효율적으로 사용하면서 이벤트가 발생할 때만 처리를 진행하기 때문에 폴링 방식보다 더 효율적입니다.<br>
 
 <h3>리액터 패턴</h3>
-![KakaoTalk_Photo_2023-07-19-22-32-23 004](https://github.com/BackEndStory/Node.js-DesignPartternBibble/assets/106163272/d45a830c-4492-48e9-a39a-cf9c4a77a6e0)
+
+![KakaoTalk_Photo_2023-07-19-22-32-23 004](https://github.com/BackEndStory/Node.js-DesignPartternBibble/assets/106163272/6ec59162-d5aa-4425-b8d9-386f9959387e)
+
 
 그림에서 이벤트 큐가 태스크 큐의 일종이다 (같은 개념이다.)<br>
 
@@ -75,7 +77,8 @@ I/O를 요청하는 함수의 호출은 작업이 완료될 때까지 스레드�
 6. 이벤트 큐의 모든 항목이 처리되고 나면 이벤트 루프는 이벤트 디멀티플렉서에서 블로킹되며 처리 가능한 새 이벤트가 있을 경우 이 과정이 다시 트리거가 됨.<br><br>
 
 <h3>Node.js를 위한 구성</h3>
-![KakaoTalk_Photo_2023-07-19-22-32-22 003](https://github.com/BackEndStory/Node.js-DesignPartternBibble/assets/106163272/daa9c419-9751-4f55-8eb3-8be8eafc8070)
+
+![KakaoTalk_Photo_2023-07-19-22-32-22 003](https://github.com/BackEndStory/Node.js-DesignPartternBibble/assets/106163272/453a3dda-6aa3-44cf-a0db-89af062f0887)
 
 
 libuv : 운영체제마다 환경이 달라 불일치성이 나온다. 이로 인해 주요 운영체제에서 호환되게 해주며 서로 다른 리소스 유형의 논 블로킹 동작을 표준화하기 위해 libuv라고 불리는 C 라이브러리를 만들었다.<br>
