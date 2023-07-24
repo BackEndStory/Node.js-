@@ -1,0 +1,1 @@
+import mylog, { info } from './logger'  // export와 export default 두 개를 사용할 경우
