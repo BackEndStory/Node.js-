@@ -4,8 +4,13 @@ import superagent from 'superagent'
 import mkdirp from 'mkdirp'
 import { urlToFilename } from './util.js'
 
-
+const spidering = new Set()
 export function spider(url, nesting, cb){
+  if(spidering.has(url)){
+    return process.nextTick(cb)
+  }
+  spidering.add(url)
+
     const filename = urlToFilename(url)
     fs.readFile(filename,'utf8', (err, fileContent) => {
         if(err){
