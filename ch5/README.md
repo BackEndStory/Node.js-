@@ -45,6 +45,8 @@ node.js 디자인 패턴 바이블 도서 스터디
         - x가 프로미스라면 프로미스 x의 거부 사유를 최종적인 거부 사유로 하여 거부한다.
 
 
+![23](https://github.com/Ryeolee/Node.js-DesignPartternBibble/assets/106163272/70f7e9b4-8f3b-4412-958b-b38de6c04f1f)
+
 
 
 
