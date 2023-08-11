@@ -22,13 +22,33 @@ async function spiderLinks (currentUrl, content, nesting) {
       return
     }
     const links = getPageLinks(currentUrl, content)
+
     for (const link of links) {
       await spider(link, nesting - 1)
     }
 
-    // links.forEach( async function iteration(link) {              // 안티 패턴 
+    // links.forEach( async function iteration(link) {              // 안티 패턴 ( 순차 )
     //     await spider(link, nesting - 1)
     // });
+
+
+    // const promises = links.map(link => spider(link, nesting - 1))       // 병렬 실행 ( 오류 시 바로 오류가 나지 않고 모든 요청 처리 후 오류가 남 비추천)
+    // for(const promise of promises){
+    //   await promise
+    // }
+
+    const promises = links.map(link => spider(link, nesting - 1))  
+
+    return Promise.all(promises)
+
+
+
+
+    
+
+
+
+
   }
 
   
