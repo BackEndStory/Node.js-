@@ -10,12 +10,16 @@ export class ReplaceStream extends Transform {
 
   _transform (chunk, encoding, callback) {
     const pieces = (this.tail + chunk).split(this.searchStr)
+   // console.log(pieces);
     const lastPiece = pieces[pieces.length - 1]
+   // console.log(lastPiece);
     const tailLen = this.searchStr.length - 1
+    //console.log(tailLen);
     this.tail = lastPiece.slice(-tailLen)
+    //console.log(this.tail);
     pieces[pieces.length - 1] = lastPiece.slice(0, -tailLen)
+    console.log(pieces[pieces.length - 1]);
 
-    console.log(pieces);
     //console.log(lastPiece);
     // console.log(tailLen);
 
